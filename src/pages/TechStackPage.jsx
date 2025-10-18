@@ -71,11 +71,11 @@ const TechStackPage = () => {
   ]
 
   return (
-    <div className="bg-black">
+    <div className="bg-black dark:bg-white transition-colors duration-300">
       {/* Header */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black dark:from-white/80 dark:via-white/70 dark:to-white z-10"></div>
           <img
             src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80"
             alt="Modern server infrastructure"
@@ -85,7 +85,7 @@ const TechStackPage = () => {
         </div>
         <div className="relative z-20 container-custom px-6 md:px-12 lg:px-24 text-center">
           <h1 className="heading-xl mb-6">Technology Stack</h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 dark:text-gray-700 max-w-3xl mx-auto">
             Built with industry-leading technologies for performance, scalability, and reliability
           </p>
         </div>
@@ -95,7 +95,7 @@ const TechStackPage = () => {
       {techCategories.map((category, index) => (
         <section
           key={index}
-          className={`section-padding bg-black ${index > 0 ? 'border-t border-gray-800' : ''}`}
+          className={`section-padding bg-black dark:bg-white ${index > 0 ? 'border-t border-gray-800 dark:border-gray-200' : ''}`}
         >
           <div className="container-custom">
             {/* Category Header */}
@@ -104,7 +104,7 @@ const TechStackPage = () => {
                 {category.icon}
               </div>
               <h2 className="heading-md mb-4">{category.category}</h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">{category.description}</p>
+              <p className="text-gray-400 dark:text-gray-600 max-w-2xl mx-auto">{category.description}</p>
             </div>
 
             {/* Technologies Grid */}
@@ -115,7 +115,7 @@ const TechStackPage = () => {
                     {tech.icon}
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{tech.name}</h3>
-                  <p className="text-gray-400 text-sm">{tech.description}</p>
+                  <p className="text-gray-400 dark:text-gray-600 text-sm">{tech.description}</p>
                 </div>
               ))}
             </div>
@@ -124,42 +124,42 @@ const TechStackPage = () => {
       ))}
 
       {/* Architecture Overview */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <h2 className="heading-lg text-center mb-12">System Architecture</h2>
           <div className="max-w-5xl mx-auto">
-            <div className="bg-black border-2 border-gray-800 rounded-lg p-8 md:p-12 shadow-lg">
+            <div className="bg-black dark:bg-white border-2 border-gray-800 dark:border-gray-200 rounded-lg p-8 md:p-12 shadow-lg">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div className="text-center">
-                  <div className="bg-black border border-gray-800 rounded-lg p-6 mb-4">
+                  <div className="bg-black dark:bg-white border border-gray-800 dark:border-gray-200 rounded-lg p-6 mb-4">
                     <Code className="w-12 h-12 text-primary mx-auto mb-3" />
                     <h3 className="font-semibold mb-2">Presentation Layer</h3>
-                    <p className="text-gray-400 text-sm">React + Tailwind CSS</p>
+                    <p className="text-gray-400 dark:text-gray-600 text-sm">React + Tailwind CSS</p>
                   </div>
                   <div className="text-gray-500 text-2xl">↓</div>
                 </div>
                 <div className="text-center">
-                  <div className="bg-black border border-gray-800 rounded-lg p-6 mb-4">
+                  <div className="bg-black dark:bg-white border border-gray-800 dark:border-gray-200 rounded-lg p-6 mb-4">
                     <Server className="w-12 h-12 text-primary mx-auto mb-3" />
                     <h3 className="font-semibold mb-2">Application Layer</h3>
-                    <p className="text-gray-400 text-sm">Django + Redis</p>
+                    <p className="text-gray-400 dark:text-gray-600 text-sm">Django + Redis</p>
                   </div>
                   <div className="text-gray-500 text-2xl">↓</div>
                 </div>
                 <div className="text-center">
-                  <div className="bg-black border border-gray-800 rounded-lg p-6 mb-4">
+                  <div className="bg-black dark:bg-white border border-gray-800 dark:border-gray-200 rounded-lg p-6 mb-4">
                     <Database className="w-12 h-12 text-primary mx-auto mb-3" />
                     <h3 className="font-semibold mb-2">Data Layer</h3>
-                    <p className="text-gray-400 text-sm">PostgreSQL + EFS</p>
+                    <p className="text-gray-400 dark:text-gray-600 text-sm">PostgreSQL + EFS</p>
                   </div>
                   <div className="text-gray-500 text-2xl">↓</div>
                 </div>
               </div>
               <div className="text-center">
-                <div className="bg-black border border-gray-800 rounded-lg p-6">
+                <div className="bg-black dark:bg-white border border-gray-800 dark:border-gray-200 rounded-lg p-6">
                   <Cloud className="w-12 h-12 text-primary mx-auto mb-3" />
                   <h3 className="font-semibold mb-2">Infrastructure Layer</h3>
-                  <p className="text-gray-400 text-sm">Kubernetes + Docker + AWS</p>
+                  <p className="text-gray-400 dark:text-gray-600 text-sm">Kubernetes + Docker + AWS</p>
                 </div>
               </div>
             </div>
@@ -168,7 +168,7 @@ const TechStackPage = () => {
       </section>
 
       {/* Key Technical Features */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <h2 className="heading-md text-center mb-12">Technical Highlights</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -207,7 +207,7 @@ const TechStackPage = () => {
               <div key={index} className="card">
                 <div className="text-primary mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                <p className="text-gray-400">{feature.description}</p>
+                <p className="text-gray-400 dark:text-gray-600">{feature.description}</p>
               </div>
             ))}
           </div>

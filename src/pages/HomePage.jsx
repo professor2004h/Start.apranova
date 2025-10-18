@@ -40,12 +40,12 @@ const HomePage = () => {
   ]
 
   return (
-    <div className="bg-black">
+    <div className="bg-black dark:bg-white transition-colors duration-300">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black dark:from-white/70 dark:via-white/60 dark:to-white z-10"></div>
           <img
             src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=80"
             alt="Professional developer workspace"
@@ -62,7 +62,7 @@ const HomePage = () => {
           <p className="text-2xl md:text-3xl text-primary font-semibold mb-8">
             Where Code Meets Intelligence
           </p>
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 dark:text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
             Advanced cloud-based IDE platform with AI-powered syntax assistance, collaborative coding environment, and enterprise-grade project management for modern technical education.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -78,14 +78,14 @@ const HomePage = () => {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2"></div>
+          <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-gray-400 dark:bg-gray-600 rounded-full mt-2"></div>
           </div>
         </div>
       </section>
 
       {/* Key Differentiators */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <h2 className="heading-md text-center mb-12">Why Choose Apranova</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -94,7 +94,7 @@ const HomePage = () => {
                 <div className="text-primary flex-shrink-0 mt-1">
                   {item.icon}
                 </div>
-                <p className="text-gray-300">{item.text}</p>
+                <p className="text-gray-300 dark:text-gray-700">{item.text}</p>
               </div>
             ))}
           </div>
@@ -102,7 +102,7 @@ const HomePage = () => {
       </section>
 
       {/* Feature Cards */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <h2 className="heading-lg text-center mb-16">Core Capabilities</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -112,7 +112,7 @@ const HomePage = () => {
                   {feature.icon}
                 </div>
                 <h3 className="heading-sm mb-4">{feature.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+                <p className="text-gray-400 dark:text-gray-600 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -120,15 +120,15 @@ const HomePage = () => {
       </section>
 
       {/* Collaboration Image Section */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="heading-md mb-6">Built for Modern Learning</h2>
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              <p className="text-gray-300 dark:text-gray-700 text-lg leading-relaxed mb-6">
                 Apranova combines cutting-edge cloud infrastructure with intelligent learning tools to create an unparalleled educational experience. Our platform scales from individual learners to enterprise institutions.
               </p>
-              <p className="text-gray-400 leading-relaxed mb-8">
+              <p className="text-gray-400 dark:text-gray-600 leading-relaxed mb-8">
                 With containerized workspaces, real-time collaboration, and AI-assisted learning, students gain hands-on experience with industry-standard tools while trainers maintain complete visibility and control.
               </p>
               <Link to="/learning-tracks" className="btn-primary">
@@ -148,11 +148,11 @@ const HomePage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding border-t border-gray-800">
+      <section className="section-padding border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
-          <div className="bg-black border-2 border-gray-800 rounded-2xl p-12 md:p-16 text-center shadow-lg">
+          <div className="bg-black dark:bg-white border-2 border-gray-800 dark:border-gray-200 rounded-2xl p-12 md:p-16 text-center shadow-lg">
             <h2 className="heading-lg mb-6">Ready to Transform Your Learning Experience?</h2>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
+            <p className="text-gray-300 dark:text-gray-700 text-lg max-w-2xl mx-auto mb-8">
               Join forward-thinking institutions and learners who are building the future with Apranova's enterprise learning platform.
             </p>
             <a href="mailto:contact@apranova.com?subject=Early Access Request" className="btn-primary text-lg">

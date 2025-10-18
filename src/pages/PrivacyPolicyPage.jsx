@@ -119,18 +119,18 @@ const PrivacyPolicyPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black dark:bg-white text-white">
       {/* Hero Section */}
       <section className="section-padding pt-32">
         <div className="container-custom text-center">
           <div className="max-w-4xl mx-auto">
             <Shield className="w-20 h-20 text-primary mx-auto mb-6" />
             <h1 className="heading-xl mb-6">Privacy Policy</h1>
-            <p className="text-gray-300 text-lg mb-4">
+            <p className="text-gray-300 dark:text-gray-700 text-lg mb-4">
               Your privacy and data security are fundamental to our mission. This policy explains how
               Apranova collects, uses, protects, and shares your information.
             </p>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 dark:text-gray-600 text-sm">
               Last Updated: {lastUpdated}
             </p>
           </div>
@@ -141,7 +141,7 @@ const PrivacyPolicyPage = () => {
       {sections.map((section, index) => (
         <section
           key={index}
-          className={`section-padding bg-black ${index > 0 ? 'border-t border-gray-800' : ''}`}
+          className={`section-padding bg-black dark:bg-white ${index > 0 ? 'border-t border-gray-800 dark:border-gray-200' : ''}`}
         >
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
@@ -158,7 +158,7 @@ const PrivacyPolicyPage = () => {
                 {section.content.map((item, idx) => (
                   <div key={idx}>
                     <h3 className="text-xl font-semibold text-white mb-3">{item.subtitle}</h3>
-                    <p className="text-gray-300 leading-relaxed">{item.text}</p>
+                    <p className="text-gray-300 dark:text-gray-700 leading-relaxed">{item.text}</p>
                   </div>
                 ))}
               </div>
@@ -168,11 +168,11 @@ const PrivacyPolicyPage = () => {
       ))}
 
       {/* Data Retention */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-lg mb-6">Data Retention</h2>
-            <div className="space-y-4 text-gray-300">
+            <div className="space-y-4 text-gray-300 dark:text-gray-700">
               <p>
                 We retain your personal data for as long as your account is active or as needed to provide
                 you with our services. If you request account deletion, we will delete or anonymize your
@@ -190,11 +190,11 @@ const PrivacyPolicyPage = () => {
       </section>
 
       {/* Children's Privacy */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-lg mb-6">Children's Privacy</h2>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-300 dark:text-gray-700 leading-relaxed">
               Apranova is designed for users aged 16 and older. We do not knowingly collect personal
               information from children under 16. If you believe we have inadvertently collected information
               from a child under 16, please contact us immediately at contact@apranova.com, and we will take
@@ -205,16 +205,16 @@ const PrivacyPolicyPage = () => {
       </section>
 
       {/* International Data Transfers */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-lg mb-6">International Data Transfers</h2>
-            <p className="text-gray-300 leading-relaxed mb-4">
+            <p className="text-gray-300 dark:text-gray-700 leading-relaxed mb-4">
               Apranova operates globally and may transfer your data to servers located in different countries.
               We ensure that all international data transfers comply with applicable data protection laws and
               implement appropriate safeguards, including:
             </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-300 ml-4">
+            <ul className="list-disc list-inside space-y-2 text-gray-300 dark:text-gray-700 ml-4">
               <li>Standard contractual clauses approved by regulatory authorities</li>
               <li>Adequacy decisions for data transfers to approved countries</li>
               <li>Encryption and security measures during data transmission</li>
@@ -225,11 +225,11 @@ const PrivacyPolicyPage = () => {
       </section>
 
       {/* Changes to Privacy Policy */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-lg mb-6">Changes to This Privacy Policy</h2>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-300 dark:text-gray-700 leading-relaxed">
               We may update this Privacy Policy from time to time to reflect changes in our practices,
               technology, legal requirements, or other factors. We will notify you of any material changes by
               posting the updated policy on this page and updating the "Last Updated" date. For significant
@@ -241,11 +241,11 @@ const PrivacyPolicyPage = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto bg-black border-2 border-gray-800 rounded-2xl p-12 text-center shadow-lg">
+          <div className="max-w-4xl mx-auto bg-black dark:bg-white border-2 border-gray-800 dark:border-gray-200 rounded-2xl p-12 text-center shadow-lg">
             <h2 className="heading-lg mb-4">Questions About Privacy?</h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-300 dark:text-gray-700 mb-8 max-w-2xl mx-auto">
               If you have questions, concerns, or requests regarding this Privacy Policy or our data
               practices, please contact our Data Protection Officer.
             </p>

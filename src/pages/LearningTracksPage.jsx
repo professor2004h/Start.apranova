@@ -83,11 +83,11 @@ const LearningTracksPage = () => {
   ]
 
   return (
-    <div className="bg-black">
+    <div className="bg-black dark:bg-white transition-colors duration-300">
       {/* Header */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black dark:from-white/80 dark:via-white/70 dark:to-white z-10"></div>
           <img
             src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1920&q=80"
             alt="Professional learning space"
@@ -97,7 +97,7 @@ const LearningTracksPage = () => {
         </div>
         <div className="relative z-20 container-custom px-6 md:px-12 lg:px-24 text-center">
           <h1 className="heading-xl mb-6">Learning Tracks</h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 dark:text-gray-700 max-w-3xl mx-auto">
             Structured pathways to master in-demand technical skills through hands-on projects
           </p>
         </div>
@@ -107,7 +107,7 @@ const LearningTracksPage = () => {
       {tracks.map((track, index) => (
         <section
           key={index}
-          className={`section-padding bg-black ${index > 0 ? 'border-t border-gray-800' : ''}`}
+          className={`section-padding bg-black dark:bg-white ${index > 0 ? 'border-t border-gray-800 dark:border-gray-200' : ''}`}
         >
           <div className="container-custom">
             {/* Track Header */}
@@ -116,7 +116,7 @@ const LearningTracksPage = () => {
                 {track.icon}
               </div>
               <h2 className="heading-lg mb-6">{track.title}</h2>
-              <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+              <p className="text-gray-300 dark:text-gray-700 text-lg max-w-3xl mx-auto">
                 {track.description}
               </p>
             </div>
@@ -142,20 +142,20 @@ const LearningTracksPage = () => {
                       <Layers className="w-6 h-6 text-gray-500" />
                     </div>
                     <h4 className="text-xl font-semibold mb-3">{project.name}</h4>
-                    <p className="text-gray-400 text-sm">{project.description}</p>
+                    <p className="text-gray-400 dark:text-gray-600 text-sm">{project.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Tech Stack */}
-            <div className="bg-black/50 border border-gray-700 rounded-lg p-8 max-w-3xl mx-auto">
+            <div className="bg-black dark:bg-white/50 border border-gray-700 rounded-lg p-8 max-w-3xl mx-auto">
               <h3 className="text-xl font-semibold text-center mb-6">Technology Stack</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {track.techStack.map((tech, techIndex) => (
                   <div key={techIndex} className="text-center">
                     <div className="text-4xl mb-2">{tech.icon}</div>
-                    <p className="text-gray-300 font-medium">{tech.name}</p>
+                    <p className="text-gray-300 dark:text-gray-700 font-medium">{tech.name}</p>
                   </div>
                 ))}
               </div>
@@ -165,7 +165,7 @@ const LearningTracksPage = () => {
       ))}
 
       {/* Deliverables */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <h2 className="heading-lg text-center mb-12">Student Deliverables</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -175,7 +175,7 @@ const LearningTracksPage = () => {
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
-                <p className="text-gray-400">{item.description}</p>
+                <p className="text-gray-400 dark:text-gray-600">{item.description}</p>
               </div>
             ))}
           </div>
@@ -183,7 +183,7 @@ const LearningTracksPage = () => {
       </section>
 
       {/* Benefits */}
-      <section className="section-padding bg-black">
+      <section className="section-padding bg-black dark:bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-md text-center mb-12">What You'll Achieve</h2>
@@ -198,7 +198,7 @@ const LearningTracksPage = () => {
               ].map((benefit, index) => (
                 <div key={index} className="flex items-start space-x-3">
                   <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                  <p className="text-gray-300">{benefit}</p>
+                  <p className="text-gray-300 dark:text-gray-700">{benefit}</p>
                 </div>
               ))}
             </div>

@@ -43,11 +43,11 @@ const AboutPage = () => {
   ]
 
   return (
-    <div className="bg-black">
+    <div className="bg-black dark:bg-white transition-colors duration-300">
       {/* Header */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black dark:from-white/80 dark:via-white/70 dark:to-white z-10"></div>
           <img
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80"
             alt="Inspiring workspace"

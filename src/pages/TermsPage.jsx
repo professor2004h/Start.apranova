@@ -123,18 +123,18 @@ const TermsPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black dark:bg-white text-white">
       {/* Hero Section */}
       <section className="section-padding pt-32">
         <div className="container-custom text-center">
           <div className="max-w-4xl mx-auto">
             <Scale className="w-20 h-20 text-primary mx-auto mb-6" />
             <h1 className="heading-xl mb-6">Terms and Conditions</h1>
-            <p className="text-gray-300 text-lg mb-4">
+            <p className="text-gray-300 dark:text-gray-700 text-lg mb-4">
               These terms govern your use of the Apranova educational technology platform. Please read them
               carefully before using our services.
             </p>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 dark:text-gray-600 text-sm">
               Last Updated: {lastUpdated}
             </p>
           </div>
@@ -145,7 +145,7 @@ const TermsPage = () => {
       {sections.map((section, index) => (
         <section
           key={index}
-          className={`section-padding bg-black ${index > 0 ? 'border-t border-gray-800' : ''}`}
+          className={`section-padding bg-black dark:bg-white ${index > 0 ? 'border-t border-gray-800 dark:border-gray-200' : ''}`}
         >
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
@@ -162,7 +162,7 @@ const TermsPage = () => {
                 {section.content.map((item, idx) => (
                   <div key={idx}>
                     <h3 className="text-xl font-semibold text-white mb-3">{item.subtitle}</h3>
-                    <p className="text-gray-300 leading-relaxed">{item.text}</p>
+                    <p className="text-gray-300 dark:text-gray-700 leading-relaxed">{item.text}</p>
                   </div>
                 ))}
               </div>
@@ -172,11 +172,11 @@ const TermsPage = () => {
       ))}
 
       {/* Termination */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-lg mb-6">Account Termination</h2>
-            <div className="space-y-4 text-gray-300">
+            <div className="space-y-4 text-gray-300 dark:text-gray-700">
               <p>
                 You may terminate your account at any time by contacting us at contact@apranova.com. Upon
                 termination, your access to the platform will be revoked, and your data will be handled in
@@ -194,11 +194,11 @@ const TermsPage = () => {
       </section>
 
       {/* Indemnification */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-lg mb-6">Indemnification</h2>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-300 dark:text-gray-700 leading-relaxed">
               You agree to indemnify, defend, and hold harmless Apranova, its affiliates, officers, directors,
               employees, and agents from and against any claims, liabilities, damages, losses, costs, or
               expenses (including reasonable attorneys' fees) arising from your use of the platform, violation
@@ -210,11 +210,11 @@ const TermsPage = () => {
       </section>
 
       {/* Governing Law */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-lg mb-6">Governing Law and Dispute Resolution</h2>
-            <div className="space-y-4 text-gray-300">
+            <div className="space-y-4 text-gray-300 dark:text-gray-700">
               <p>
                 These terms shall be governed by and construed in accordance with the laws of the jurisdiction
                 in which Apranova is registered, without regard to its conflict of law provisions.
@@ -235,11 +235,11 @@ const TermsPage = () => {
       </section>
 
       {/* Severability */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-lg mb-6">Severability and Entire Agreement</h2>
-            <div className="space-y-4 text-gray-300">
+            <div className="space-y-4 text-gray-300 dark:text-gray-700">
               <p>
                 If any provision of these terms is found to be invalid, illegal, or unenforceable, the
                 remaining provisions shall continue in full force and effect. The invalid provision shall be
@@ -256,11 +256,11 @@ const TermsPage = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto bg-black border-2 border-gray-800 rounded-2xl p-12 text-center shadow-lg">
+          <div className="max-w-4xl mx-auto bg-black dark:bg-white border-2 border-gray-800 dark:border-gray-200 rounded-2xl p-12 text-center shadow-lg">
             <h2 className="heading-lg mb-4">Questions About These Terms?</h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-300 dark:text-gray-700 mb-8 max-w-2xl mx-auto">
               If you have questions or concerns regarding these Terms and Conditions, please contact our legal
               team.
             </p>

@@ -61,11 +61,11 @@ const FeaturesPage = () => {
   ]
 
   return (
-    <div className="bg-black">
+    <div className="bg-black dark:bg-white transition-colors duration-300">
       {/* Header */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black dark:from-white/80 dark:via-white/70 dark:to-white z-10"></div>
           <img
             src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&q=80"
             alt="Clean coding environment"
@@ -75,7 +75,7 @@ const FeaturesPage = () => {
         </div>
         <div className="relative z-20 container-custom px-6 md:px-12 lg:px-24 text-center">
           <h1 className="heading-xl mb-6">Platform Features</h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 dark:text-gray-700 max-w-3xl mx-auto">
             Enterprise-grade tools and infrastructure designed for modern technical education
           </p>
         </div>
@@ -85,7 +85,7 @@ const FeaturesPage = () => {
       {features.map((feature, index) => (
         <section
           key={index}
-          className={`section-padding bg-black ${index > 0 ? 'border-t border-gray-800' : ''}`}
+          className={`section-padding bg-black dark:bg-white ${index > 0 ? 'border-t border-gray-800 dark:border-gray-200' : ''}`}
         >
           <div className="container-custom">
             <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
@@ -97,10 +97,10 @@ const FeaturesPage = () => {
                   {feature.icon}
                 </div>
                 <h2 className="heading-md mb-6">{feature.title}</h2>
-                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                <p className="text-gray-300 dark:text-gray-700 text-lg leading-relaxed mb-8">
                   {feature.description}
                 </p>
-                
+
                 {/* Capabilities */}
                 <div className="space-y-4 mb-6">
                   {feature.capabilities.map((capability, capIndex) => (
@@ -108,15 +108,15 @@ const FeaturesPage = () => {
                       <div className="text-primary flex-shrink-0 mt-1">
                         {capability.icon}
                       </div>
-                      <p className="text-gray-400">{capability.text}</p>
+                      <p className="text-gray-400 dark:text-gray-600">{capability.text}</p>
                     </div>
                   ))}
                 </div>
 
                 {/* Note if exists */}
                 {feature.note && (
-                  <div className="bg-black/50 border border-primary/30 rounded-lg p-4 mt-6">
-                    <p className="text-sm text-gray-400 italic">{feature.note}</p>
+                  <div className="bg-black/50 dark:bg-white/50 border border-primary/30 rounded-lg p-4 mt-6">
+                    <p className="text-sm text-gray-400 dark:text-gray-600 italic">{feature.note}</p>
                   </div>
                 )}
               </div>
@@ -136,25 +136,25 @@ const FeaturesPage = () => {
       ))}
 
       {/* Architecture Diagram Section */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom text-center">
           <h2 className="heading-md mb-12">Enterprise Architecture</h2>
-          <div className="bg-black border-2 border-gray-800 rounded-lg p-8 md:p-12 max-w-4xl mx-auto shadow-lg">
+          <div className="bg-black dark:bg-white border-2 border-gray-800 dark:border-gray-200 rounded-lg p-8 md:p-12 max-w-4xl mx-auto shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="space-y-4">
                 <Server className="w-12 h-12 text-primary mx-auto" />
-                <h3 className="text-xl font-semibold">Kubernetes</h3>
-                <p className="text-gray-400 text-sm">Container orchestration and scaling</p>
+                <h3 className="text-xl font-semibold text-white dark:text-black">Kubernetes</h3>
+                <p className="text-gray-400 dark:text-gray-600 text-sm">Container orchestration and scaling</p>
               </div>
               <div className="space-y-4">
                 <Database className="w-12 h-12 text-primary mx-auto" />
-                <h3 className="text-xl font-semibold">Storage Layer</h3>
-                <p className="text-gray-400 text-sm">EFS persistence and S3 integration</p>
+                <h3 className="text-xl font-semibold text-white dark:text-black">Storage Layer</h3>
+                <p className="text-gray-400 dark:text-gray-600 text-sm">EFS persistence and S3 integration</p>
               </div>
               <div className="space-y-4">
                 <Globe className="w-12 h-12 text-primary mx-auto" />
-                <h3 className="text-xl font-semibold">Multi-Region</h3>
-                <p className="text-gray-400 text-sm">Global deployment capability</p>
+                <h3 className="text-xl font-semibold text-white dark:text-black">Multi-Region</h3>
+                <p className="text-gray-400 dark:text-gray-600 text-sm">Global deployment capability</p>
               </div>
             </div>
           </div>

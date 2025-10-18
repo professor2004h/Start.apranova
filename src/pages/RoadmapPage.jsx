@@ -56,11 +56,11 @@ const RoadmapPage = () => {
   ]
 
   return (
-    <div className="bg-black">
+    <div className="bg-black dark:bg-white transition-colors duration-300">
       {/* Header */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black dark:from-white/80 dark:via-white/70 dark:to-white z-10"></div>
           <img
             src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80"
             alt="Development roadmap"
@@ -70,14 +70,14 @@ const RoadmapPage = () => {
         </div>
         <div className="relative z-20 container-custom px-6 md:px-12 lg:px-24 text-center">
           <h1 className="heading-xl mb-6">Development Roadmap</h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 dark:text-gray-700 max-w-3xl mx-auto">
             Our strategic vision for building the world's leading enterprise learning platform
           </p>
         </div>
       </section>
 
       {/* Timeline Visualization */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <div className="max-w-5xl mx-auto">
             <div className="relative">
@@ -95,7 +95,7 @@ const RoadmapPage = () => {
                       <div className="card">
                         {/* Status Badge */}
                         <div className="flex items-center justify-between mb-4">
-                          <span className="text-gray-400 font-semibold">{phase.phase}</span>
+                          <span className="text-gray-400 dark:text-gray-600 font-semibold">{phase.phase}</span>
                           <span className={`${phase.statusColor} text-white text-xs font-semibold px-3 py-1 rounded-full`}>
                             {phase.status}
                           </span>
@@ -105,7 +105,7 @@ const RoadmapPage = () => {
                         <h3 className="heading-sm mb-4">{phase.title}</h3>
 
                         {/* Description */}
-                        <p className="text-gray-400 mb-6">{phase.description}</p>
+                        <p className="text-gray-400 dark:text-gray-600 mb-6">{phase.description}</p>
 
                         {/* Features */}
                         <div className="space-y-3 mb-6">
@@ -114,7 +114,7 @@ const RoadmapPage = () => {
                               <div className="text-primary flex-shrink-0 mt-1">
                                 {feature.icon}
                               </div>
-                              <p className="text-gray-300 text-sm">{feature.text}</p>
+                              <p className="text-gray-300 dark:text-gray-700 text-sm">{feature.text}</p>
                             </div>
                           ))}
                         </div>
@@ -128,7 +128,7 @@ const RoadmapPage = () => {
                     </div>
 
                     {/* Icon Circle */}
-                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-20 h-20 bg-black border-4 border-primary rounded-full items-center justify-center text-primary z-10 shadow-lg">
+                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-20 h-20 bg-black dark:bg-white border-4 border-primary rounded-full items-center justify-center text-primary z-10 shadow-lg">
                       {phase.icon}
                     </div>
 
@@ -150,17 +150,17 @@ const RoadmapPage = () => {
       </section>
 
       {/* Future Phases Note */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto bg-black border-2 border-gray-800 rounded-lg p-8 shadow-lg">
+          <div className="max-w-3xl mx-auto bg-black dark:bg-white border-2 border-gray-800 dark:border-gray-200 rounded-lg p-8 shadow-lg">
             <div className="flex items-start space-x-4">
               <Info className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
               <div>
                 <h3 className="text-xl font-semibold mb-3">Continuous Evolution</h3>
-                <p className="text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-300 dark:text-gray-700 leading-relaxed mb-4">
                   Additional phases and advanced role management features will unlock progressively based on user feedback, market demands, and technological advancements.
                 </p>
-                <p className="text-gray-400 text-sm">
+                <p className="text-gray-400 dark:text-gray-600 text-sm">
                   Our roadmap is designed to be flexible and responsive to the needs of our educational partners and learners, ensuring we deliver maximum value at every stage.
                 </p>
               </div>
@@ -170,24 +170,24 @@ const RoadmapPage = () => {
       </section>
 
       {/* Key Milestones */}
-      <section className="section-padding bg-black border-t border-gray-800">
+      <section className="section-padding bg-black dark:bg-white border-t border-gray-800 dark:border-gray-200">
         <div className="container-custom">
           <h2 className="heading-md text-center mb-12">Key Milestones</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="card text-center">
               <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-2">20+</h3>
-              <p className="text-gray-400">Students Onboarded</p>
+              <p className="text-gray-400 dark:text-gray-600">Students Onboarded</p>
             </div>
             <div className="card text-center">
               <Clock className="w-12 h-12 text-blue-500 mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-2">500+</h3>
-              <p className="text-gray-400">Target Users by Q4 2025</p>
+              <p className="text-gray-400 dark:text-gray-600">Target Users by Q4 2025</p>
             </div>
             <div className="card text-center">
               <Globe className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-2">Multi-Region</h3>
-              <p className="text-gray-400">Global Deployment Ready</p>
+              <p className="text-gray-400 dark:text-gray-600">Global Deployment Ready</p>
             </div>
           </div>
         </div>
