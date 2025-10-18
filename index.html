@@ -10,6 +10,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Apranova - Enterprise Learning Platform</title>
+
+    <!-- Initialize dark mode before page renders to prevent flash -->
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('apranova-theme') || 'dark';
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
