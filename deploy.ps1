@@ -46,7 +46,7 @@ function Test-Docker {
     }
 }
 
-function Build-Image {
+function New-DockerImage {
     Write-Info "Building Docker image..."
     docker build -t "${ImageName}:${Version}" .
     if ($LASTEXITCODE -eq 0) {
@@ -58,7 +58,7 @@ function Build-Image {
     }
 }
 
-function Stop-Container {
+function Stop-DockerContainer {
     $running = docker ps -q -f name=$ContainerName
     if ($running) {
         Write-Info "Stopping existing container..."
@@ -68,14 +68,14 @@ function Stop-Container {
     }
 }
 
-function Start-Container {
+function Start-DockerContainer {
     Write-Info "Starting container on port ${Port}..."
     docker run -d `
         -p "${Port}:80" `
         --name $ContainerName `
         --restart unless-stopped `
         "${ImageName}:${Version}"
-    
+
     if ($LASTEXITCODE -eq 0) {
         Write-Success "Container started successfully"
     }
@@ -85,10 +85,10 @@ function Start-Container {
     }
 }
 
-function Test-Health {
+function Test-ApplicationHealth {
     Write-Info "Checking application health..."
     Start-Sleep -Seconds 5
-    
+
     try {
         $response = Invoke-WebRequest -Uri "http://localhost:${Port}/health" -UseBasicParsing -TimeoutSec 5
         if ($response.StatusCode -eq 200) {
@@ -105,31 +105,31 @@ function Test-Health {
     }
 }
 
-function Show-Logs {
+function Show-ContainerLogs {
     Write-Info "Showing container logs..."
     docker logs $ContainerName
 }
 
-function Show-Status {
+function Show-ContainerStatus {
     Write-Info "Container status:"
     docker ps -f name=$ContainerName
 }
 
-function Invoke-Deploy {
+function Invoke-Deployment {
     Write-Host "=========================================" -ForegroundColor Cyan
     Write-Host "  Apranova Deployment Script" -ForegroundColor Cyan
     Write-Host "=========================================" -ForegroundColor Cyan
     Write-Host ""
-    
+
     if (-not (Test-Docker)) {
         exit 1
     }
-    
-    Build-Image
-    Stop-Container
-    Start-Container
-    Test-Health
-    
+
+    New-DockerImage
+    Stop-DockerContainer
+    Start-DockerContainer
+    Test-ApplicationHealth
+
     Write-Host ""
     Write-Host "=========================================" -ForegroundColor Cyan
     Write-Success "Deployment completed successfully!"
@@ -149,32 +149,32 @@ function Invoke-Deploy {
 switch ($Command) {
     'build' {
         if (Test-Docker) {
-            Build-Image
+            New-DockerImage
         }
     }
     'start' {
         if (Test-Docker) {
-            Start-Container
+            Start-DockerContainer
         }
     }
     'stop' {
-        Stop-Container
+        Stop-DockerContainer
     }
     'restart' {
-        Stop-Container
-        Start-Container
+        Stop-DockerContainer
+        Start-DockerContainer
     }
     'logs' {
-        Show-Logs
+        Show-ContainerLogs
     }
     'status' {
-        Show-Status
+        Show-ContainerStatus
     }
     'health' {
-        Test-Health
+        Test-ApplicationHealth
     }
     'deploy' {
-        Invoke-Deploy
+        Invoke-Deployment
     }
 }
 
