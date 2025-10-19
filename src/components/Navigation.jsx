@@ -24,24 +24,24 @@ const Navigation = () => {
 
   return (
     <nav className="bg-black dark:bg-white border-b border-gray-800 dark:border-gray-200 sticky top-0 z-50 transition-colors duration-300">
-      <div className="container-custom px-6 md:px-12 lg:px-24">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
+      <div className="w-full px-4 md:px-6 lg:px-8">
+        <div className="flex items-center h-20">
+          {/* Logo - Left Corner */}
+          <Link to="/" className="flex items-center flex-shrink-0">
             <img
               src="/Apra Nova Logo.png"
               alt="Apra Nova Logo"
-              className="h-12 w-auto md:h-14 lg:h-16 object-contain"
+              className="h-10 w-auto md:h-12 lg:h-14 object-contain"
             />
           </Link>
 
-          {/* Desktop Navigation & Theme Toggle */}
-          <div className="hidden lg:flex items-center space-x-1">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex items-center flex-1 justify-center gap-1 px-4">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 whitespace-nowrap ${
                   isActive(link.path)
                     ? 'bg-primary text-white'
                     : 'text-gray-300 dark:text-gray-700 hover:text-white dark:hover:text-black hover:bg-gray-900 dark:hover:bg-gray-100'
@@ -50,11 +50,13 @@ const Navigation = () => {
                 {link.label}
               </Link>
             ))}
+          </div>
 
-            {/* Theme Toggle Button - Desktop */}
+          {/* Theme Toggle Button - Right Side Desktop */}
+          <div className="hidden lg:flex items-center flex-shrink-0">
             <button
               onClick={toggleTheme}
-              className="ml-4 p-2 rounded-lg text-gray-300 dark:text-gray-700 hover:text-white dark:hover:text-black hover:bg-gray-900 dark:hover:bg-gray-100 transition-all duration-300"
+              className="p-2 rounded-lg text-gray-300 dark:text-gray-700 hover:text-white dark:hover:text-black hover:bg-gray-900 dark:hover:bg-gray-100 transition-all duration-300"
               aria-label="Toggle theme"
               title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
             >
