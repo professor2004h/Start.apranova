@@ -27,11 +27,12 @@ const Navigation = () => {
       <div className="container-custom px-6 md:px-12 lg:px-24">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center sm:hidden">
-              <span className="text-white font-bold text-xl">AN</span>
-            </div>
-            <span className="text-white dark:text-black font-bold text-xl">Apranova</span>
+          <Link to="/" className="flex items-center">
+            <img
+              src="/Apra Nova Logo.png"
+              alt="Apra Nova Logo"
+              className="h-12 w-auto md:h-14 lg:h-16 object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation & Theme Toggle */}

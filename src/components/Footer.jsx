@@ -10,11 +10,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">AN</span>
-              </div>
-              <span className="text-white dark:text-black font-bold text-xl">Apranova</span>
+            <div className="mb-4">
+              <img
+                src="/Apra Nova Logo.png"
+                alt="Apra Nova Logo"
+                className="h-10 w-auto md:h-12 object-contain"
+              />
             </div>
             <p className="text-gray-400 dark:text-gray-600 text-sm">
               Enterprise Learning Platform where code meets intelligence.
