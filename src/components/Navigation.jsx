@@ -25,9 +25,9 @@ const Navigation = () => {
   return (
     <nav className="bg-black dark:bg-white border-b border-gray-800 dark:border-gray-200 sticky top-0 z-50 transition-colors duration-300">
       <div className="w-full px-4 md:px-6 lg:px-8">
-        <div className="flex items-center h-20">
+        <div className="flex items-center justify-between h-20">
           {/* Logo - Left Corner */}
-          <Link to="/" className="flex items-center flex-shrink-0">
+          <Link to="/" className="flex items-center flex-shrink-0 lg:w-48">
             <img
               src="/Apra Nova Logo.png"
               alt="Apra Nova Logo"
@@ -36,7 +36,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation - Centered */}
-          <div className="hidden lg:flex items-center flex-1 justify-center gap-1 px-4">
+          <div className="hidden lg:flex items-center justify-center gap-1 absolute left-1/2 transform -translate-x-1/2">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -53,7 +53,7 @@ const Navigation = () => {
           </div>
 
           {/* Theme Toggle Button - Right Side Desktop */}
-          <div className="hidden lg:flex items-center flex-shrink-0">
+          <div className="hidden lg:flex items-center flex-shrink-0 lg:w-48 justify-end">
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg text-gray-300 dark:text-gray-700 hover:text-white dark:hover:text-black hover:bg-gray-900 dark:hover:bg-gray-100 transition-all duration-300"
